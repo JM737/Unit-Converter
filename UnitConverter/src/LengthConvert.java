@@ -1,4 +1,4 @@
-abstract class LengthConvert {
+class LengthConvert {
     public void firstNumCon() {};
     public void secondNumCon() {};
     public void thirdNumCon() {};

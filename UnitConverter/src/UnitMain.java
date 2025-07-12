@@ -10,7 +10,10 @@
 import java.util.Scanner;
 public class UnitMain{
     //NEED TO LEARN ON HOW TO ACCESS THE WHOLE CLASSES WITH A SINGLE OBJECT//
-    static Miles length = new Miles();
+    static LengthConvert miles = new Miles();
+    static LengthConvert kilometer = new Kilometer();
+    static LengthConvert meter = new Meter();
+
     static Scanner sc = new Scanner (System.in);
     public static void main(String[] args) {
 

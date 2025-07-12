@@ -1,4 +1,4 @@
-abstract class WeightConvert {
+class WeightConvert {
     public void firstWeightCon() {};
     public void secondWeightCon() {};
     public void thirdWeightCon() {};
