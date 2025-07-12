@@ -8,11 +8,13 @@
     - Volume (liters, gallons)
        4. Prompt the converted input */
 import java.util.Scanner;
-public class UnitMain {
+public class UnitMain{
+    static Meter meter = new Meter();
     static Scanner sc = new Scanner (System.in);
     public static void main(String[] args) {
-        System.out.print("Enter a number to convert: ");
-        int number = sc.nextInt();
-        System.out.println("Number that will be converted: " + number);
+        System.out.println("Enter a number: ");
+        double input = sc.nextDouble();
+        meter.firstNumCon(input);
+        System.out.println();
     }
 }
