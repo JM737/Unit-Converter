@@ -4,7 +4,7 @@
     - Polymorphism in one class or separate class (separate class is better)
     - Length (meters, kilometers, miles) /done
     - Weight (grams, kilograms, pounds) /done
-    - Temperature (Celsius, Fahrenheit) /ongoing
+    - Temperature (Celsius, Fahrenheit) /done
     - Volume (liters, gallons)
        4. Prompt the converted input */
 import java.util.Scanner;
@@ -13,7 +13,11 @@ public class UnitMain{
     static LengthConvert miles = new Miles();
     static LengthConvert kilometer = new Kilometer();
     static LengthConvert meter = new Meter();
-
+    static WeightConvert pounds = new Pounds();
+    static WeightConvert kilograms = new Kilograms();
+    static WeightConvert grams = new Grams();
+    static TemperatureConvert fahrenheit = new Fahrenheit();
+    static TemperatureConvert celsius = new Celsius();
     static Scanner sc = new Scanner (System.in);
     public static void main(String[] args) {
 
