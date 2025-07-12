@@ -10,7 +10,7 @@ class Grams extends WeightConvert {
     }
 
     public void secondWeightCon(double gramsNum2) {
-        double g_kg = g/1000;
+        double g_kg = gramsNum2/1000;
         System.out.println(g_kg);
     }
 
