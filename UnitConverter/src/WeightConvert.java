@@ -21,7 +21,7 @@ class Grams extends WeightConvert {
 
     }
 }
-class Kilograms extends WeightConvert {
+class Kilograms extends Grams {
 
     public void firstWeightCon(double kgNum1) {
         System.out.println(kgNum1);
@@ -41,7 +41,7 @@ class Kilograms extends WeightConvert {
     }
 }
 
-class Pounds extends WeightConvert {
+class Pounds extends Kilograms {
 
     public void firstWeightCon(double poundsNum1) {
         System.out.println(poundsNum1);

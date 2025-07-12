@@ -18,10 +18,7 @@ class Meter extends LengthConvert {
     }
 }
 
-class Kilometer extends LengthConvert {
-    public void firstNumCon(double kilometerNum1) {
-        System.out.println(kilometerNum1);
-    }
+class Kilometer extends Meter {
     public void secondNumCom(double kilometerNum2) {
         double kilo_meter = kilometerNum2 * 1000;
         System.out.println(kilo_meter);
@@ -32,10 +29,7 @@ class Kilometer extends LengthConvert {
     }
 }
 
-class Miles extends LengthConvert {
-    public void firstNumCon(double milesNum1) {
-        System.out.println(milesNum1);
-    }
+class Miles extends Kilometer {
     public void secondNumCon(double milesNum2) {
         double miles_meter = milesNum2 * 1609.34;
         System.out.println(miles_meter);
