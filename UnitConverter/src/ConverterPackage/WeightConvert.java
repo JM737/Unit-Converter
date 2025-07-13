@@ -1,3 +1,5 @@
+package ConverterPackage;
+
 class WeightConvert {
     public void firstWeightCon() {};
     public void secondWeightCon() {};

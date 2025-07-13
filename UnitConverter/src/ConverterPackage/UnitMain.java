@@ -1,3 +1,4 @@
+package ConverterPackage;
 /*TODO: 1. Create a class named UnitMain. // This class will contain the main method.
     2. Create a scanner to read user input. (Either it is a String or a int)
     3. Display a menu with a variety of unit conversion options. (String or a int)
@@ -13,6 +14,7 @@
     - Temperature (Celsius, Fahrenheit) /done
     - Volume (liters, gallons) /done
        5. Prompt the converted input */
+
 import java.util.Scanner;
 public class UnitMain{
     static LengthConvert miles = new Miles();
