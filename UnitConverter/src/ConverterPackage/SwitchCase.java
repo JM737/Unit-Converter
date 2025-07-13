@@ -8,24 +8,50 @@ package ConverterPackage;
  */
 import java.util.Scanner;
 public class SwitchCase {
-    Scanner scanner = new Scanner(System.in);
-    LengthConvert miles = new Miles();
-    LengthConvert kilometer = new Kilometer();
-    LengthConvert meter = new Meter();
-    WeightConvert pounds = new Pounds();
-    WeightConvert kilograms = new Kilograms();
-    WeightConvert grams = new Grams();
-    TemperatureConvert fahrenheit = new Fahrenheit();
-    TemperatureConvert celsius = new Celsius();
-    VolumeConvert gallons = new Gallons();
-    VolumeConvert liters = new Liters();
+    private final Scanner scanner;
+
+    // Length converters
+    private final LengthConvert miles;
+    private final LengthConvert kilometer;
+    private final LengthConvert meter;
+
+    // Weight converters
+    private final WeightConvert pounds;
+    private final WeightConvert kilograms;
+    private final WeightConvert grams;
+
+    // Temperature converters
+    private final TemperatureConvert fahrenheit;
+    private final TemperatureConvert celsius;
+
+    // Volume converters
+    private final VolumeConvert gallons;
+    private final VolumeConvert liters;
+
+    public SwitchCase() {
+        scanner = new Scanner(System.in);
+
+        miles = new Miles();
+        kilometer = new Kilometer();
+        meter = new Meter();
+
+        pounds = new Pounds();
+        kilograms = new Kilograms();
+        grams = new Grams();
+
+        fahrenheit = new Fahrenheit();
+        celsius = new Celsius();
+
+        gallons = new Gallons();
+        liters = new Liters();
+    }
     public void askNumber(){
-        System.out.println("Please enter a number to convert:");
+        System.out.print("Please enter a number to convert:");
     }
     public void convertChoices(int choice) {
         switch(choice) {
             case 1:
-                System.out.println("""
+                System.out.print("""
                         ===========================
                             LENGTH CONVERSION.
                         ===========================  \s
@@ -35,73 +61,91 @@ public class SwitchCase {
                         4. Kilometers to Miles
                         5. Miles to Meters
                         6. Miles to Kilometers
-                       \s""");
-                int lengthChoice = scanner.nextInt();
+                        7. Exit
+                        ===========================
+                        Please select a conversion type:\s""");
+
+                        int lengthChoice = scanner.nextInt();
 
                 switch(lengthChoice) {
                     case 1:
                         askNumber();
-                        double meters = scanner.nextDouble();
-                        meter.firstNumCon(meters); // Example input
+                        double metersToKilometers = scanner.nextDouble();
+                        meter.secondNumCon(metersToKilometers);
                         break;
                     case 2:
                         askNumber();
                         double metersToMiles = scanner.nextDouble();
-                        meter.secondNumCon(metersToMiles); // Example input
+                        meter.thirdNumCon(metersToMiles); // Example input
                         break;
                     case 3:
                         askNumber();
-                        double kilometers = scanner.nextDouble();
-                        kilometer.firstNumCon(kilometers); // Example input
+                        double kilometerToMeters = scanner.nextDouble();
+                        kilometer.secondNumCon(kilometerToMeters); // Example input
                         break;
                     case 4:
                         askNumber();
-                        double metersToKilometers = scanner.nextDouble();
-                        kilometer.secondNumCon(metersToKilometers); // Example input
+                        double kilometersToMiles = scanner.nextDouble();
+                        kilometer.thirdNumCon(kilometersToMiles);
                         break;
                     case 5:
                         askNumber();
-                        double milesInput = scanner.nextDouble();
-                        miles.firstNumCon(milesInput); // Example input
+                        double milesToMeters = scanner.nextDouble();
+                        miles.secondNumCon(milesToMeters);
                         break;
                     case 6:
                         askNumber();
-                        double milesToMeters = scanner.nextDouble();
-                        miles.secondNumCon(milesToMeters); // Example input
-                        break;
+                        double milesToKilometers = scanner.nextDouble();
+                        miles.thirdNumCon(milesToKilometers);
                     default:
                         System.out.println("Invalid choice for Length conversion.");
                 }
                 break;
 
             case 2:
-                System.out.println("You chose Weight conversion.");
-                System.out.println("1. Grams to Kilograms");
-                System.out.println("2. Grams to Pounds");
-                System.out.println("3. Kilograms to Grams");
-                System.out.println("4. Kilograms to Pounds");
-                System.out.println("5. Pounds to Grams");
-                System.out.println("6. Pounds to Kilograms");
+                System.out.print("""
+                    You chose Weight conversion.
+                    1. Grams to Kilograms
+                    2. Grams to Pounds
+                    3. Kilograms to Grams
+                    4. Kilograms to Pounds
+                    5. Pounds to Grams
+                    6. Pounds to Kilograms
+                    7. Exit
+                    ===========================
+                    Please select a conversion type:\s""");
                 int weightChoice = scanner.nextInt();
 
                 switch(weightChoice) {
                     case 1:
-                        grams.firstWeightCon(); // Example input
+                        askNumber();
+                        double gramsNum1 = scanner.nextDouble();
+                        grams.secondWeightCon(gramsNum1);
                         break;
                     case 2:
-                        grams.secondWeightCon(); // Example input
+                        askNumber();
+                        double gramsNum2 = scanner.nextDouble();
+                        grams.thirdWeightCon(gramsNum2); // Example input
                         break;
                     case 3:
-                        kilograms.firstWeightCon(); // Example input
+                        askNumber();
+                        double kilogramsNum1 = scanner.nextDouble();
+                        kilograms.secondWeightCon(kilogramsNum1); // Example input
                         break;
                     case 4:
-                        kilograms.secondWeightCon(); // Example input
+                        askNumber();
+                        double kilogramsNum2 = scanner.nextDouble();
+                        kilograms.thirdWeightCon(kilogramsNum2);
                         break;
                     case 5:
-                        pounds.firstWeightCon(); // Example input
+                        askNumber();
+                        double poundsNum1 = scanner.nextDouble();
+                        pounds.secondWeightCon(poundsNum1); // Example input
                         break;
                     case 6:
-                        pounds.secondWeightCon(); // Example input
+                        askNumber();
+                        double poundsNum2 = scanner.nextDouble();
+                        pounds.thirdWeightCon(poundsNum2);
                         break;
                     default:
                         System.out.println("Invalid choice for Weight conversion.");
@@ -115,12 +159,14 @@ public class SwitchCase {
 
                 switch(tempChoice) {
                     case 1:
-                        celsius.firstTempCon(); // Example input
-                        celsius.secondTempCon(); // Example input
+                        askNumber();
+                        double celsiusNum1 = scanner.nextDouble();// Example input
+                        celsius.secondTempCon(celsiusNum1); // Example input
                         break;
                     case 2:
-                        fahrenheit.firstTempCon(); // Example input
-                        fahrenheit.secondTempCon(); // Example input
+                        askNumber();
+                        double celsiusNum2 = scanner.nextDouble();// Example input
+                        fahrenheit.secondTempCon(celsiusNum2); // Example input
                         break;
                     default:
                         System.out.println("Invalid choice for Temperature conversion.");
@@ -135,10 +181,14 @@ public class SwitchCase {
 
                 switch(volumeChoice) {
                     case 1:
-                        liters.firstVolumeCon(); // Example input
+                        askNumber();
+                        double litersNum1 = scanner.nextDouble(); // Example input
+                        liters.secondVolumeCon(litersNum1); // Example input
                         break;
                     case 2:
-                        gallons.firstVolumeCon(); // Example input
+                        askNumber();
+                        double gallonsNum1 = scanner.nextDouble(); // Example input
+                        gallons.secondVolumeCon(gallonsNum1); // Example input
                         break;
                     default:
                         System.out.println("Invalid choice for Volume conversion.");
