@@ -8,7 +8,7 @@ package ConverterPackage;
  */
 import java.util.Scanner;
 public class SwitchCase {
-    Scanner switchChoice = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
     LengthConvert miles = new Miles();
     LengthConvert kilometer = new Kilometer();
     LengthConvert meter = new Meter();
@@ -19,41 +19,60 @@ public class SwitchCase {
     TemperatureConvert celsius = new Celsius();
     VolumeConvert gallons = new Gallons();
     VolumeConvert liters = new Liters();
+    public void askNumber(){
+        System.out.println("Please enter a number to convert:");
+    }
     public void convertChoices(int choice) {
         switch(choice) {
             case 1:
-                System.out.println("You chose Length conversion.");
-                System.out.println("1. Meters to Kilometers");
-                System.out.println("2. Meters to Miles");
-                System.out.println("3. Kilometers to Meters");
-                System.out.println("4. Kilometers to Miles");
-                System.out.println("5. Miles to Meters");
-                System.out.println("6. Miles to Kilometers");
-                int lengthChoice = switchChoice.nextInt();
+                System.out.println("""
+                        ===========================
+                            LENGTH CONVERSION.
+                        ===========================  \s
+                        1. Meters to Kilometers
+                        2. Meters to Miles
+                        3. Kilometers to Meters
+                        4. Kilometers to Miles
+                        5. Miles to Meters
+                        6. Miles to Kilometers
+                       \s""");
+                int lengthChoice = scanner.nextInt();
 
-                /*switch(lengthChoice) {
+                switch(lengthChoice) {
                     case 1:
-                        meter.firstNumCon(1000); // Example input
+                        askNumber();
+                        double meters = scanner.nextDouble();
+                        meter.firstNumCon(meters); // Example input
                         break;
                     case 2:
-                        meter.secondNumCon(1609.34); // Example input
+                        askNumber();
+                        double metersToMiles = scanner.nextDouble();
+                        meter.secondNumCon(metersToMiles); // Example input
                         break;
                     case 3:
-                        kilometer.firstNumCon(1); // Example input
+                        askNumber();
+                        double kilometers = scanner.nextDouble();
+                        kilometer.firstNumCon(kilometers); // Example input
                         break;
                     case 4:
-                        kilometer.secondNumCon(1); // Example input
+                        askNumber();
+                        double metersToKilometers = scanner.nextDouble();
+                        kilometer.secondNumCon(metersToKilometers); // Example input
                         break;
                     case 5:
-                        miles.firstNumCon(1); // Example input
+                        askNumber();
+                        double milesInput = scanner.nextDouble();
+                        miles.firstNumCon(milesInput); // Example input
                         break;
                     case 6:
-                        miles.secondNumCon(1); // Example input
+                        askNumber();
+                        double milesToMeters = scanner.nextDouble();
+                        miles.secondNumCon(milesToMeters); // Example input
                         break;
                     default:
                         System.out.println("Invalid choice for Length conversion.");
                 }
-                break;*/
+                break;
 
             case 2:
                 System.out.println("You chose Weight conversion.");
@@ -63,68 +82,68 @@ public class SwitchCase {
                 System.out.println("4. Kilograms to Pounds");
                 System.out.println("5. Pounds to Grams");
                 System.out.println("6. Pounds to Kilograms");
-                int weightChoice = switchChoice.nextInt();
+                int weightChoice = scanner.nextInt();
 
-                /*switch(weightChoice) {
+                switch(weightChoice) {
                     case 1:
-                        grams.firstWeightCon(1000); // Example input
+                        grams.firstWeightCon(); // Example input
                         break;
                     case 2:
-                        grams.secondWeightCon(2.20462); // Example input
+                        grams.secondWeightCon(); // Example input
                         break;
                     case 3:
-                        kilograms.firstWeightCon(1); // Example input
+                        kilograms.firstWeightCon(); // Example input
                         break;
                     case 4:
-                        kilograms.secondWeightCon(2.20462); // Example input
+                        kilograms.secondWeightCon(); // Example input
                         break;
                     case 5:
-                        pounds.firstWeightCon(1); // Example input
+                        pounds.firstWeightCon(); // Example input
                         break;
                     case 6:
-                        pounds.secondWeightCon(1); // Example input
+                        pounds.secondWeightCon(); // Example input
                         break;
                     default:
                         System.out.println("Invalid choice for Weight conversion.");
                 }
-                break;*/
+                break;
             case 3:
                 System.out.println("You chose Temperature conversion.");
                 System.out.println("1. Celsius to Fahrenheit");
                 System.out.println("2. Fahrenheit to Celsius");
-                int tempChoice = switchChoice.nextInt();
+                int tempChoice = scanner.nextInt();
 
-                /*switch(tempChoice) {
+                switch(tempChoice) {
                     case 1:
-                        celsius.firstTempCon(25); // Example input
-                        celsius.secondTempCon(25); // Example input
+                        celsius.firstTempCon(); // Example input
+                        celsius.secondTempCon(); // Example input
                         break;
                     case 2:
-                        fahrenheit.firstTempCon(77); // Example input
-                        fahrenheit.secondTempCon(77); // Example input
+                        fahrenheit.firstTempCon(); // Example input
+                        fahrenheit.secondTempCon(); // Example input
                         break;
                     default:
                         System.out.println("Invalid choice for Temperature conversion.");
                 }
-                break;*/
+                break;
 
             case 4:
                 System.out.println("You chose Volume conversion.");
                 System.out.println("1. Liters to Gallons");
                 System.out.println("2. Gallons to Liters");
-                int volumeChoice = switchChoice.nextInt();
+                int volumeChoice = scanner.nextInt();
 
-                /*switch(volumeChoice) {
+                switch(volumeChoice) {
                     case 1:
-                        liters.firstVolumeCon(3.78541); // Example input
+                        liters.firstVolumeCon(); // Example input
                         break;
                     case 2:
-                        gallons.firstVolumeCon(1); // Example input
+                        gallons.firstVolumeCon(); // Example input
                         break;
                     default:
                         System.out.println("Invalid choice for Volume conversion.");
                 }
-                break;*/
+                break;
             case 5:
                 System.out.println("Exiting the program.");
                 System.exit(0);

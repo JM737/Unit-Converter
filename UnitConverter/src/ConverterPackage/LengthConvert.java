@@ -1,8 +1,8 @@
 package ConverterPackage;
 
 class LengthConvert {
-    public void firstNumCon() {};
-    public void secondNumCon() {};
+    public void firstNumCon(double meters) {};
+    public void secondNumCon(double metersToMiles) {};
     public void thirdNumCon() {};
 }
 
