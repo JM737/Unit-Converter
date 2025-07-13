@@ -17,16 +17,7 @@ package ConverterPackage;
 
 import java.util.Scanner;
 public class UnitMain{
-    static LengthConvert miles = new Miles();
-    static LengthConvert kilometer = new Kilometer();
-    static LengthConvert meter = new Meter();
-    static WeightConvert pounds = new Pounds();
-    static WeightConvert kilograms = new Kilograms();
-    static WeightConvert grams = new Grams();
-    static TemperatureConvert fahrenheit = new Fahrenheit();
-    static TemperatureConvert celsius = new Celsius();
-    static VolumeConvert gallons = new Gallons();
-    static VolumeConvert liters = new Liters();
+    SwitchCase switchChoice = new SwitchCase();
     static Scanner sc = new Scanner (System.in);
     public static void main(String[] args) {
 
