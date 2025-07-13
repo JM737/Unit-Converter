@@ -17,9 +17,23 @@ package ConverterPackage;
 
 import java.util.Scanner;
 public class UnitMain{
-    SwitchCase switchChoice = new SwitchCase();
+    static SwitchCase switchChoice = new SwitchCase();
     static Scanner sc = new Scanner (System.in);
+    static void displayMenu() {
+        System.out.print(""" 
+                    [   UNIT CONVERTER  ]
+                Please choose a conversion type:
+                1. Length (meters, kilometers, miles)
+                2. Weight (grams, kilograms, pounds)
+                3. Temperature (Celsius, Fahrenheit)
+                4. Volume (liters, gallons)
+                5. Exit
+                Enter your choice (1-5):
+                """);
+    }
     public static void main(String[] args) {
-
+        displayMenu();
+        int choice = sc.nextInt();
+    switchChoice.convertChoices(choice);
     }
 }
