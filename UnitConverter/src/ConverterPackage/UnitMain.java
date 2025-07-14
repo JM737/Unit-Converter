@@ -18,17 +18,17 @@ public class UnitMain{
         System.out.print(""" 
                     [   UNIT CONVERTER  ]
                 Please choose a conversion type:
-                1. Length (meters, kilometers, miles)
-                2. Weight (grams, kilograms, pounds)
-                3. Temperature (Celsius, Fahrenheit)
-                4. Volume (liters, gallons)
+                1. Length (meters <-> kilometers <-> miles)
+                2. Weight (grams <-> kilograms <-> pounds)
+                3. Temperature (Celsius <-> Fahrenheit)
+                4. Volume (liters <-> gallons)
                 5. Exit
                 Enter your choice (1-5):\s""");
     }
     public static void main(String[] args) {
         do {
             displayMenu();
-            int choice = sc.nextInt();
+            String choice = sc.nextLine();
             switchChoice.convertChoices(choice);
         } while (isValid);
     }

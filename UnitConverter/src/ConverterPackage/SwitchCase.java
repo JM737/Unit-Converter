@@ -49,79 +49,142 @@ public class SwitchCase {
     public void askNumber(){
         System.out.print("Please enter a number to convert: ");
     }
-
-    public void convertChoices(int choice) {
+    boolean outerLoop = true;
+    boolean innerLoop = true;
+    public void convertChoices(String choice) {
         switch(choice) {
-            case 1:
-                System.out.print("""
-                        
-                        ===========================
-                            LENGTH CONVERSION.
-                        ===========================  \s
-                        1. Meters to Kilometers
-                        2. Meters to Miles
-                        3. Kilometers to Meters
-                        4. Kilometers to Miles
-                        5. Miles to Meters
-                        6. Miles to Kilometers
-                        7. Exit
-                        ===========================
-                        Please select a conversion type:\s""");
 
-                        int lengthChoice = scanner.nextInt();
-
-                switch(lengthChoice) {
-                    case 1:
-                        System.out.println("    METERS TO KILOMETERS");
-                        askNumber();
-                        double metersToKilometers = scanner.nextDouble();
-                        meter.secondNumCon(metersToKilometers);
-                        System.out.println();
-                        break;
-                    case 2:
-                        System.out.println("    METERS TO MILES");
-                        askNumber();
-                        double metersToMiles = scanner.nextDouble();
-                        meter.thirdNumCon(metersToMiles);
-                        System.out.println();
-                        break;
-                    case 3:
-                        System.out.println("    KILOMETERS TO METERS");
-                        askNumber();
-                        double kilometerToMeters = scanner.nextDouble();
-                        kilometer.secondNumCon(kilometerToMeters);
-                        System.out.println();
-                        break;
-                    case 4:
-                        System.out.println("    KILOMETERS TO MILES");
-                        askNumber();
-                        double kilometersToMiles = scanner.nextDouble();
-                        kilometer.thirdNumCon(kilometersToMiles);
-                        System.out.println();
-                        break;
-                    case 5:
-                        System.out.println("    MILES TO METERS");
-                        askNumber();
-                        double milesToMeters = scanner.nextDouble();
-                        miles.secondNumCon(milesToMeters);
-                        System.out.println();
-                        break;
-                    case 6:
-                        System.out.println("    MILES TO KILOMETERS");
-                        askNumber();
-                        double milesToKilometers = scanner.nextDouble();
-                        miles.thirdNumCon(milesToKilometers);
-                        System.out.println();
-                        break;
-                    case 7:
-                        System.out.println("Exiting Length conversion.");
-                        break;
-                    default:
-                        System.out.println("Invalid choice for Length conversion.");
-                }
+            case "1":       //OUTER SWITCH
+                do {     // OUTER SWITCH
+                    System.out.print("""
+                            
+                            ===========================
+                                LENGTH CONVERSION.
+                            ===========================  \s
+                            1. Meters to Kilometers
+                            2. Meters to Miles
+                            3. Kilometers to Meters
+                            4. Kilometers to Miles
+                            5. Miles to Meters
+                            6. Miles to Kilometers
+                            7. Exit
+                            ===========================
+                            Please select a conversion type:\s""");
+                    String lengthChoice = scanner.nextLine();
+                    //INNER SWITCH
+                    do { // INNER LOOP
+                        switch (lengthChoice) {
+                            case "1":
+                                System.out.println("    METERS TO KILOMETERS");
+                                askNumber();
+                                double metersToKilometers = scanner.nextDouble();
+                                meter.secondNumCon(metersToKilometers);
+                                System.out.println();
+                                System.out.println("Do you want to continue? (yes/no)");
+                                String continueChoice = scanner.next();
+                                if (!continueChoice.equals("yes")) {
+                                    System.out.println("Exiting Length conversion.");
+                                    innerLoop = false;
+                                    break;
+                                } else {
+                                    System.out.println("Continuing Length conversion.");
+                                }
+                                break;
+                            case "2":
+                                System.out.println("    METERS TO MILES");
+                                askNumber();
+                                double metersToMiles = scanner.nextDouble();
+                                meter.thirdNumCon(metersToMiles);
+                                System.out.println();
+                                System.out.println("Do you want to continue? (yes/no)");
+                                String continueChoice2 = scanner.next();
+                                if (!continueChoice2.equals("yes")) {
+                                    System.out.println("Exiting Length conversion.");
+                                    innerLoop = false;
+                                    break;
+                                } else {
+                                    System.out.println("Continuing Length conversion.");
+                                }
+                                break;
+                            case "3":
+                                System.out.println("    KILOMETERS TO METERS");
+                                askNumber();
+                                double kilometerToMeters = scanner.nextDouble();
+                                kilometer.secondNumCon(kilometerToMeters);
+                                System.out.println();
+                                System.out.println("Do you want to continue? (yes/no)");
+                                String continueChoice3 = scanner.next();
+                                if (!continueChoice3.equals("yes")) {
+                                    System.out.println("Exiting Length conversion.");
+                                    innerLoop = false;
+                                    break;
+                                } else {
+                                    System.out.println("Continuing Length conversion.");
+                                }
+                                break;
+                            case "4":
+                                System.out.println("    KILOMETERS TO MILES");
+                                askNumber();
+                                double kilometersToMiles = scanner.nextDouble();
+                                kilometer.thirdNumCon(kilometersToMiles);
+                                System.out.println();
+                                System.out.println("Do you want to continue? (yes/no)");
+                                String continueChoice4 = scanner.next();
+                                if (!continueChoice4.equals("yes")) {
+                                    System.out.println("Exiting Length conversion.");
+                                    innerLoop = false;
+                                    break;
+                                } else {
+                                    System.out.println("Continuing Length conversion.");
+                                }
+                                break;
+                            case "5":
+                                System.out.println("    MILES TO METERS");
+                                askNumber();
+                                double milesToMeters = scanner.nextDouble();
+                                miles.secondNumCon(milesToMeters);
+                                System.out.println();
+                                System.out.println("Do you want to continue? (yes/no)");
+                                String continueChoice5 = scanner.next();
+                                if (!continueChoice5.equals("yes")) {
+                                    System.out.println("Exiting Length conversion.");
+                                    innerLoop = false;
+                                    break;
+                                } else {
+                                    System.out.println("Continuing Length conversion.");
+                                }
+                                break;
+                            case "6":
+                                System.out.println("    MILES TO KILOMETERS");
+                                askNumber();
+                                double milesToKilometers = scanner.nextDouble();
+                                miles.thirdNumCon(milesToKilometers);
+                                System.out.println();
+                                System.out.println("Do you want to continue? (yes/no)");
+                                String continueChoice6 = scanner.next();
+                                if (!continueChoice6.equals("yes")) {
+                                    System.out.println("Exiting Length conversion.");
+                                    innerLoop = false;
+                                    break;
+                                } else {
+                                    System.out.println("Continuing Length conversion.");
+                                }
+                                break;
+                            case "7":
+                                System.out.println("Exiting Length conversion.");
+                                System.out.println();
+                                innerLoop = false;
+                                outerLoop = false;
+                                break;
+                            default:
+                                System.out.println("Invalid choice for Length conversion.");
+                                break;
+                        }
+                    } /*INNER LOOP*/ while (innerLoop);
+                } while (outerLoop);
                 break;
 
-            case 2:
+            case "2":
                 System.out.print("""
                     =============================
                         WEIGHT CONVERSION.
@@ -187,7 +250,7 @@ public class SwitchCase {
                         System.out.println("Invalid choice for Weight conversion.");
                 }
                 break;
-            case 3:
+            case "3":
                 System.out.println("""
                         ===========================
                           TEMPERATURE CONVERSION.
@@ -223,7 +286,7 @@ public class SwitchCase {
                 }
                 break;
 
-            case 4:
+            case "4":
                 System.out.println("""
                         =============================
                               VOLUME CONVERSION.
@@ -258,7 +321,7 @@ public class SwitchCase {
                         System.out.println("Invalid choice for Volume conversion.");
                 }
                 break;
-            case 5:
+            case "5":
                 System.out.println("Exiting the program.");
                 System.exit(0);
                 break;
