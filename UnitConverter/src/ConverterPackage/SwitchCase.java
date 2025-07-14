@@ -72,40 +72,46 @@ public class SwitchCase {
 
                 switch(lengthChoice) {
                     case 1:
-                        System.out.println("METERS TO KILOMETERS");
+                        System.out.println("    METERS TO KILOMETERS");
                         askNumber();
                         double metersToKilometers = scanner.nextDouble();
                         meter.secondNumCon(metersToKilometers);
+                        System.out.println();
                         break;
                     case 2:
-                        System.out.println("METERS TO MILES");
+                        System.out.println("    METERS TO MILES");
                         askNumber();
                         double metersToMiles = scanner.nextDouble();
-                        meter.thirdNumCon(metersToMiles); // Example input
+                        meter.thirdNumCon(metersToMiles);
+                        System.out.println();
                         break;
                     case 3:
-                        System.out.println("KILOMETERS TO METERS");
+                        System.out.println("    KILOMETERS TO METERS");
                         askNumber();
                         double kilometerToMeters = scanner.nextDouble();
-                        kilometer.secondNumCon(kilometerToMeters); // Example input
+                        kilometer.secondNumCon(kilometerToMeters);
+                        System.out.println();
                         break;
                     case 4:
-                        System.out.println("KILOMETERS TO MILES");
+                        System.out.println("    KILOMETERS TO MILES");
                         askNumber();
                         double kilometersToMiles = scanner.nextDouble();
                         kilometer.thirdNumCon(kilometersToMiles);
+                        System.out.println();
                         break;
                     case 5:
-                        System.out.println("MILES TO METERS");
+                        System.out.println("    MILES TO METERS");
                         askNumber();
                         double milesToMeters = scanner.nextDouble();
                         miles.secondNumCon(milesToMeters);
+                        System.out.println();
                         break;
                     case 6:
-                        System.out.println("MILES TO KILOMETERS");
+                        System.out.println("    MILES TO KILOMETERS");
                         askNumber();
                         double milesToKilometers = scanner.nextDouble();
                         miles.thirdNumCon(milesToKilometers);
+                        System.out.println();
                         break;
                     case 7:
                         System.out.println("Exiting Length conversion.");
@@ -119,7 +125,7 @@ public class SwitchCase {
                 System.out.print("""
                     =============================
                         WEIGHT CONVERSION.
-                    =============================    
+                    =============================   \s
                     1. Grams to Kilograms
                     2. Grams to Pounds
                     3. Kilograms to Grams
@@ -133,40 +139,46 @@ public class SwitchCase {
 
                 switch(weightChoice) {
                     case 1:
-                        System.out.println("GRAMS TO KILOGRAMS");
+                        System.out.println("    GRAMS TO KILOGRAMS");
                         askNumber();
                         double gramsNum1 = scanner.nextDouble();
                         grams.secondWeightCon(gramsNum1);
+                        System.out.println();
                         break;
                     case 2:
-                        System.out.println("GRAMS TO POUNDS");
+                        System.out.println("    GRAMS TO POUNDS");
                         askNumber();
                         double gramsNum2 = scanner.nextDouble();
-                        grams.thirdWeightCon(gramsNum2); // Example input
+                        grams.thirdWeightCon(gramsNum2);
+                        System.out.println();
                         break;
                     case 3:
-                        System.out.println("KILOGRAMS TO GRAMS");
+                        System.out.println("    KILOGRAMS TO GRAMS");
                         askNumber();
                         double kilogramsNum1 = scanner.nextDouble();
-                        kilograms.secondWeightCon(kilogramsNum1); // Example input
+                        kilograms.secondWeightCon(kilogramsNum1);
+                        System.out.println();
                         break;
                     case 4:
-                        System.out.println("KILOGRAMS TO POUNDS");
+                        System.out.println("    KILOGRAMS TO POUNDS");
                         askNumber();
                         double kilogramsNum2 = scanner.nextDouble();
                         kilograms.thirdWeightCon(kilogramsNum2);
+                        System.out.println();
                         break;
                     case 5:
-                        System.out.println("POUNDS TO GRAMS");
+                        System.out.println("    POUNDS TO GRAMS");
                         askNumber();
                         double poundsNum1 = scanner.nextDouble();
-                        pounds.secondWeightCon(poundsNum1); // Example input
+                        pounds.secondWeightCon(poundsNum1);
+                        System.out.println();
                         break;
                     case 6:
-                        System.out.println("POUNDS TO KILOGRAMS");
+                        System.out.println("    POUNDS TO KILOGRAMS");
                         askNumber();
                         double poundsNum2 = scanner.nextDouble();
                         pounds.thirdWeightCon(poundsNum2);
+                        System.out.println();
                         break;
                     case 7:
                         System.out.println("Exiting Weight conversion.");
@@ -190,16 +202,18 @@ public class SwitchCase {
 
                 switch(tempChoice) {
                     case 1:
-                        System.out.println("CELSIUS TO FAHRENHEIT");
+                        System.out.println("    CELSIUS TO FAHRENHEIT");
                         askNumber();
-                        double celsiusNum1 = scanner.nextDouble();// Example input
-                        celsius.secondTempCon(celsiusNum1); // Example input
+                        double celsiusNum1 = scanner.nextDouble();
+                        celsius.secondTempCon(celsiusNum1);
+                        System.out.println();
                         break;
                     case 2:
-                        System.out.println("FAHRENHEIT TO CELSIUS");
+                        System.out.println("    FAHRENHEIT TO CELSIUS");
                         askNumber();
-                        double celsiusNum2 = scanner.nextDouble();// Example input
-                        fahrenheit.secondTempCon(celsiusNum2); // Example input
+                        double celsiusNum2 = scanner.nextDouble();
+                        fahrenheit.secondTempCon(celsiusNum2);
+                        System.out.println();
                         break;
                     case 3:
                         System.out.println("Exiting Temperature conversion.");
@@ -213,27 +227,29 @@ public class SwitchCase {
                 System.out.println("""
                         =============================
                               VOLUME CONVERSION.
-                        =============================    
+                        =============================   \s
                         1. Liters to Gallons
                         2. Gallons to Liters
                         3. Exit
                         ===========================
                         Please select a conversion type:\s
-                        """);
+                       \s""");
                 int volumeChoice = scanner.nextInt();
 
                 switch(volumeChoice) {
                     case 1:
-                        System.out.println("LITERS TO GALLONS");
+                        System.out.println("    LITERS TO GALLONS");
                         askNumber();
-                        double litersNum1 = scanner.nextDouble(); // Example input
-                        liters.secondVolumeCon(litersNum1); // Example input
+                        double litersNum1 = scanner.nextDouble();
+                        liters.secondVolumeCon(litersNum1);
+                        System.out.println();
                         break;
                     case 2:
-                        System.out.println("GALLONS TO LITERS");
+                        System.out.println("    GALLONS TO LITERS");
                         askNumber();
-                        double gallonsNum1 = scanner.nextDouble(); // Example input
-                        gallons.secondVolumeCon(gallonsNum1); // Example input
+                        double gallonsNum1 = scanner.nextDouble();
+                        gallons.secondVolumeCon(gallonsNum1);
+                        System.out.println();
                         break;
                     case 3:
                         System.out.println("Exiting Volume conversion.");
@@ -247,7 +263,8 @@ public class SwitchCase {
                 System.exit(0);
                 break;
             default:
-                System.out.println("Invalid choice");
+                System.out.println("    INVALID CHOICE!");
+                System.out.println();
                 break;
         }
     }
