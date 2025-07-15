@@ -27,8 +27,16 @@ public class UnitMain{
     }
     public static void main(String[] args) {
         do {
+            int choice;
             displayMenu();
-            String choice = sc.nextLine();
+            if (sc.hasNextInt()) {
+                choice = sc.nextInt();
+            } else {
+                System.out.println("Please enter a valid number.");
+                sc.next(); // Clear the invalid input
+                System.out.println();
+                continue; // Restart the loop
+            }
             switchChoice.convertChoices(choice);
         } while (isValid);
     }

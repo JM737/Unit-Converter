@@ -49,14 +49,15 @@ public class SwitchCase {
     public void askNumber(){
         System.out.print("Please enter a number to convert: ");
     }
-            // VARIABLES TO CONTROL THE OUTER AND INNER LOOP
+            // Control loops
             boolean outerLoop = true;
             boolean innerLoop = true;
 
-    public void convertChoices(String choice) {
+    public void convertChoices(int choice) {
         switch(choice) {
 
-            case "1":
+            case 1:
+                int lengthChoice;
                 do {
                     System.out.print("""
                             
@@ -72,15 +73,18 @@ public class SwitchCase {
                             7. Exit
                             ===========================
                             Please select a conversion type:\s""");
-                    String lengthChoice = scanner.nextLine();
-                    if (lengthChoice.isEmpty()) {
-                        System.out.println("Invalid input. Please enter a valid number.");
-                        continue; // Skip to the next iteration of the outer loop
+                    if (scanner.hasNextInt()) {
+                        lengthChoice = scanner.nextInt();
+                    }else{
+                        System.out.println("Invalid input. Please enter a number.");
+                        scanner.next(); // Clear the invalid input
+                        continue; // Restart the outer loop
                     }
+
                     //INNER SWITCH
                     do { // INNER LOOP
                         switch (lengthChoice) {
-                            case "1":
+                            case 1:
                                 System.out.println("    METERS TO KILOMETERS");
                                 askNumber();
                                 double metersToKilometers = scanner.nextDouble();
@@ -96,7 +100,7 @@ public class SwitchCase {
                                     System.out.println("Continuing Length conversion.");
                                 }
                                 break;
-                            case "2":
+                            case 2:
                                 System.out.println("    METERS TO MILES");
                                 askNumber();
                                 double metersToMiles = scanner.nextDouble();
@@ -112,7 +116,7 @@ public class SwitchCase {
                                     System.out.println("Continuing Length conversion.");
                                 }
                                 break;
-                            case "3":
+                            case 3:
                                 System.out.println("    KILOMETERS TO METERS");
                                 askNumber();
                                 double kilometerToMeters = scanner.nextDouble();
@@ -128,7 +132,7 @@ public class SwitchCase {
                                     System.out.println("Continuing Length conversion.");
                                 }
                                 break;
-                            case "4":
+                            case 4:
                                 System.out.println("    KILOMETERS TO MILES");
                                 askNumber();
                                 double kilometersToMiles = scanner.nextDouble();
@@ -144,7 +148,7 @@ public class SwitchCase {
                                     System.out.println("Continuing Length conversion.");
                                 }
                                 break;
-                            case "5":
+                            case 5:
                                 System.out.println("    MILES TO METERS");
                                 askNumber();
                                 double milesToMeters = scanner.nextDouble();
@@ -160,7 +164,7 @@ public class SwitchCase {
                                     System.out.println("Continuing Length conversion.");
                                 }
                                 break;
-                            case "6":
+                            case 6:
                                 System.out.println("    MILES TO KILOMETERS");
                                 askNumber();
                                 double milesToKilometers = scanner.nextDouble();
@@ -176,7 +180,7 @@ public class SwitchCase {
                                     System.out.println("Continuing Length conversion.");
                                 }
                                 break;
-                            case "7":
+                            case 7:
                                 System.out.println("Exiting Length conversion.");
                                 innerLoop = false;
                                 outerLoop = false;
@@ -190,7 +194,7 @@ public class SwitchCase {
                 break;
 
 
-            case "2":
+            case 2:
                 do {
                     System.out.print("""
                             =============================
@@ -319,7 +323,7 @@ public class SwitchCase {
                 } while (outerLoop);
                 break;
 
-            case "3":
+            case 3:
                 do {
                     System.out.println("""
                              ===========================
@@ -380,7 +384,7 @@ public class SwitchCase {
                 } while (outerLoop);
                 break;
 
-            case "4":
+            case 4:
                 do {
                     System.out.println("""
                              =============================
@@ -441,7 +445,7 @@ public class SwitchCase {
                     } while (innerLoop);
                 } while (outerLoop);
                 break;
-            case "5":
+            case 5:
                 System.out.println("Exiting the program.");
                 System.exit(0);
                 break;
