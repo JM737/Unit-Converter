@@ -49,13 +49,15 @@ public class SwitchCase {
     public void askNumber(){
         System.out.print("Please enter a number to convert: ");
     }
-    boolean outerLoop = true;
-    boolean innerLoop = true;
+            // VARIABLES TO CONTROL THE OUTER AND INNER LOOP
+            boolean outerLoop = true;
+            boolean innerLoop = true;
+
     public void convertChoices(String choice) {
         switch(choice) {
 
-            case "1":       //OUTER SWITCH
-                do {     // OUTERLOOP
+            case "1":
+                do {
                     System.out.print("""
                             
                             ===========================
@@ -71,6 +73,10 @@ public class SwitchCase {
                             ===========================
                             Please select a conversion type:\s""");
                     String lengthChoice = scanner.nextLine();
+                    if (lengthChoice.isEmpty()) {
+                        System.out.println("Invalid input. Please enter a valid number.");
+                        continue; // Skip to the next iteration of the outer loop
+                    }
                     //INNER SWITCH
                     do { // INNER LOOP
                         switch (lengthChoice) {
@@ -177,7 +183,7 @@ public class SwitchCase {
                                 break;
                             default:
                                 System.out.println("Invalid choice for Length conversion.");
-                                break;
+                                innerLoop = false; // Exit the inner loop for invalid choice
                         }
                     } /*INNER LOOP*/ while (innerLoop);
                 } while (outerLoop);
@@ -306,6 +312,7 @@ public class SwitchCase {
                                 break;
                             default:
                                 System.out.println("Invalid choice for Weight conversion.");
+                                innerLoop = false;
                                 break;
                         }
                     }while (innerLoop);
@@ -366,6 +373,7 @@ public class SwitchCase {
                                 break;
                             default:
                                 System.out.println("Invalid choice for Temperature conversion.");
+                                innerLoop = false; // Exit the inner loop for invalid choice
                                 break;
                         }
                     } while (innerLoop);
@@ -427,6 +435,8 @@ public class SwitchCase {
                                 break;
                             default:
                                 System.out.println("Invalid choice for Volume conversion.");
+                                innerLoop = false; // Exit the inner loop for invalid choice
+                                break;
                         }
                     } while (innerLoop);
                 } while (outerLoop);
