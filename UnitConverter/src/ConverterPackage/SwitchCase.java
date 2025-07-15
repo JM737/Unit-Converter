@@ -46,8 +46,17 @@ public class SwitchCase {
         liters = new Liters();
 
     }
-    public void askNumber(){
-        System.out.print("Please enter a number to convert: ");
+    public int getValidInteger(String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            if (scanner.hasNextInt()) {
+                return scanner.nextInt();
+            } else {
+                System.out.println("Invalid input. Please enter a valid integer.");
+                scanner.next(); // Clear invalid input
+            }
+        }
+
     }
             // Control loops
             boolean outerLoop = true;
@@ -88,8 +97,7 @@ public class SwitchCase {
                         switch (lengthChoice) {
                             case 1:
                                 System.out.println("    METERS TO KILOMETERS");
-                                askNumber();
-                                double metersToKilometers = scanner.nextDouble();
+                                double metersToKilometers = getValidInteger("Enter a number to convert: ");
                                 meter.secondNumCon(metersToKilometers);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -104,8 +112,7 @@ public class SwitchCase {
                                 break;
                             case 2:
                                 System.out.println("    METERS TO MILES");
-                                askNumber();
-                                double metersToMiles = scanner.nextDouble();
+                                double metersToMiles = getValidInteger("Enter a number to convert: ");
                                 meter.thirdNumCon(metersToMiles);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -120,8 +127,7 @@ public class SwitchCase {
                                 break;
                             case 3:
                                 System.out.println("    KILOMETERS TO METERS");
-                                askNumber();
-                                double kilometerToMeters = scanner.nextDouble();
+                                double kilometerToMeters = getValidInteger("Enter a number to convert: ");
                                 kilometer.secondNumCon(kilometerToMeters);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -136,8 +142,7 @@ public class SwitchCase {
                                 break;
                             case 4:
                                 System.out.println("    KILOMETERS TO MILES");
-                                askNumber();
-                                double kilometersToMiles = scanner.nextDouble();
+                                double kilometersToMiles = getValidInteger("Enter a number to convert: ");
                                 kilometer.thirdNumCon(kilometersToMiles);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -152,8 +157,7 @@ public class SwitchCase {
                                 break;
                             case 5:
                                 System.out.println("    MILES TO METERS");
-                                askNumber();
-                                double milesToMeters = scanner.nextDouble();
+                                double milesToMeters = getValidInteger("Enter a number to convert: ");
                                 miles.secondNumCon(milesToMeters);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -168,8 +172,7 @@ public class SwitchCase {
                                 break;
                             case 6:
                                 System.out.println("    MILES TO KILOMETERS");
-                                askNumber();
-                                double milesToKilometers = scanner.nextDouble();
+                                double milesToKilometers = getValidInteger("Enter a number to convert: ");
                                 miles.thirdNumCon(milesToKilometers);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -226,8 +229,7 @@ public class SwitchCase {
                         switch (weightChoice) {
                             case 1:
                                 System.out.println("    GRAMS TO KILOGRAMS");
-                                askNumber();
-                                double gramsNum1 = scanner.nextDouble();
+                                double gramsNum1 = getValidInteger("Enter a number to convert: ");
                                 grams.secondWeightCon(gramsNum1);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -242,8 +244,7 @@ public class SwitchCase {
                                 break;
                             case 2:
                                 System.out.println("    GRAMS TO POUNDS");
-                                askNumber();
-                                double gramsNum2 = scanner.nextDouble();
+                                double gramsNum2 = getValidInteger("Enter a number to convert: ");
                                 grams.thirdWeightCon(gramsNum2);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -258,8 +259,7 @@ public class SwitchCase {
                                 break;
                             case 3:
                                 System.out.println("    KILOGRAMS TO GRAMS");
-                                askNumber();
-                                double kilogramsNum1 = scanner.nextDouble();
+                                double kilogramsNum1 = getValidInteger("Enter a number to convert: ");
                                 kilograms.secondWeightCon(kilogramsNum1);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -274,8 +274,7 @@ public class SwitchCase {
                                 break;
                             case 4:
                                 System.out.println("    KILOGRAMS TO POUNDS");
-                                askNumber();
-                                double kilogramsNum2 = scanner.nextDouble();
+                                double kilogramsNum2 = getValidInteger("Enter a number to convert: ");
                                 kilograms.thirdWeightCon(kilogramsNum2);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -290,8 +289,7 @@ public class SwitchCase {
                                 break;
                             case 5:
                                 System.out.println("    POUNDS TO GRAMS");
-                                askNumber();
-                                double poundsNum1 = scanner.nextDouble();
+                                double poundsNum1 = getValidInteger("Enter a number to convert: ");
                                 pounds.secondWeightCon(poundsNum1);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -306,8 +304,7 @@ public class SwitchCase {
                                 break;
                             case 6:
                                 System.out.println("    POUNDS TO KILOGRAMS");
-                                askNumber();
-                                double poundsNum2 = scanner.nextDouble();
+                                double poundsNum2 = getValidInteger("Enter a number to convert: ");
                                 pounds.thirdWeightCon(poundsNum2);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -361,8 +358,7 @@ public class SwitchCase {
                         switch (tempChoice) {
                             case 1:
                                 System.out.println("    CELSIUS TO FAHRENHEIT");
-                                askNumber();
-                                double celsiusNum1 = scanner.nextDouble();
+                                double celsiusNum1 = getValidInteger("Enter a number to convert: ");
                                 celsius.secondTempCon(celsiusNum1);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -377,8 +373,7 @@ public class SwitchCase {
                                 break;
                             case 2:
                                 System.out.println("    FAHRENHEIT TO CELSIUS");
-                                askNumber();
-                                double celsiusNum2 = scanner.nextDouble();
+                                double celsiusNum2 = getValidInteger("Enter a number to convert: ");
                                 fahrenheit.secondTempCon(celsiusNum2);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -434,8 +429,7 @@ public class SwitchCase {
                         switch (volumeChoice) {
                             case 1:
                                 System.out.println("    LITERS TO GALLONS");
-                                askNumber();
-                                double litersNum1 = scanner.nextDouble();
+                                double litersNum1 = getValidInteger("Enter a number to convert: ");
                                 liters.secondVolumeCon(litersNum1);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
@@ -448,10 +442,10 @@ public class SwitchCase {
                                     System.out.println("Continuing Volume conversion.");
                                 }
                                 break;
+
                             case 2:
                                 System.out.println("    GALLONS TO LITERS");
-                                askNumber();
-                                double gallonsNum1 = scanner.nextDouble();
+                                double gallonsNum1 = getValidInteger("Enter a number to convert: ");
                                 gallons.secondVolumeCon(gallonsNum1);
                                 System.out.println();
                                 System.out.println("Do you want to continue? (yes/no)");
