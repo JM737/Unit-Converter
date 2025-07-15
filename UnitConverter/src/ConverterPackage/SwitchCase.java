@@ -56,6 +56,7 @@ public class SwitchCase {
     public void convertChoices(int choice) {
         switch(choice) {
 
+                                                        // LENGTH CONVERSION
             case 1:
                 int lengthChoice;
                 do {
@@ -78,6 +79,7 @@ public class SwitchCase {
                     }else{
                         System.out.println("Invalid input. Please enter a number.");
                         scanner.next(); // Clear the invalid input
+                        System.out.println();
                         continue; // Restart the outer loop
                     }
 
@@ -182,6 +184,7 @@ public class SwitchCase {
                                 break;
                             case 7:
                                 System.out.println("Exiting Length conversion.");
+                                System.out.println();
                                 innerLoop = false;
                                 outerLoop = false;
                                 break;
@@ -193,8 +196,9 @@ public class SwitchCase {
                 } while (outerLoop);
                 break;
 
-
+                                                // WEIGHT CONVERSION
             case 2:
+                int weightChoice;
                 do {
                     System.out.print("""
                             =============================
@@ -209,7 +213,14 @@ public class SwitchCase {
                             7. Exit
                             ===========================
                             Please select a conversion type:\s""");
-                    int weightChoice = scanner.nextInt();
+                    if (scanner.hasNextInt()) {
+                        weightChoice = scanner.nextInt();
+                    } else {
+                        System.out.println("Invalid input. Please enter a number.");
+                        scanner.next(); // Clear the invalid input
+                        System.out.println();
+                        continue; // Restart the outer loop
+                    }
 
                     do {
                         switch (weightChoice) {
@@ -311,6 +322,7 @@ public class SwitchCase {
                                 break;
                             case 7:
                                 System.out.println("Exiting Weight conversion.");
+                                System.out.println();
                                 innerLoop = false;
                                 outerLoop = false;
                                 break;
@@ -323,8 +335,10 @@ public class SwitchCase {
                 } while (outerLoop);
                 break;
 
+                                                    // TEMPERATURE CONVERSION
             case 3:
                 do {
+                    int tempChoice;
                     System.out.println("""
                              ===========================
                                TEMPERATURE CONVERSION.
@@ -335,7 +349,14 @@ public class SwitchCase {
                              ===========================
                              Please select a conversion type:\s
                             \s""");
-                    int tempChoice = scanner.nextInt();
+                    if (scanner.hasNextInt()) {
+                        tempChoice = scanner.nextInt();
+                    } else {
+                        System.out.println("Invalid input. Please enter a number.");
+                        scanner.next(); // Clear the invalid input
+                        System.out.println();
+                        continue; // Restart the outer loop
+                    }
                     do {
                         switch (tempChoice) {
                             case 1:
@@ -364,6 +385,7 @@ public class SwitchCase {
                                 String continueChoice2 = scanner.next();
                                 if (!continueChoice2.equals("yes")) {
                                     System.out.println("Exiting Temperature conversion.");
+                                    System.out.println();
                                     innerLoop = false;
                                     break;
                                 } else {
@@ -372,6 +394,7 @@ public class SwitchCase {
                                 break;
                             case 3:
                                 System.out.println("Exiting Temperature conversion.");
+                                System.out.println();
                                 innerLoop = false;
                                 outerLoop = false;
                                 break;
@@ -384,7 +407,9 @@ public class SwitchCase {
                 } while (outerLoop);
                 break;
 
+                                                        // VOLUME CONVERSION
             case 4:
+                int volumeChoice;
                 do {
                     System.out.println("""
                              =============================
@@ -396,7 +421,14 @@ public class SwitchCase {
                              ===========================
                              Please select a conversion type:\s
                             \s""");
-                    int volumeChoice = scanner.nextInt();
+                    if (scanner.hasNextInt()) {
+                        volumeChoice = scanner.nextInt();
+                    } else {
+                        System.out.println("Invalid input. Please enter a number.");
+                        scanner.next(); // Clear the invalid input
+                        System.out.println();
+                        continue; // Restart the outer loop
+                    }
 
                     do {
                         switch (volumeChoice) {
@@ -434,6 +466,7 @@ public class SwitchCase {
                                 break;
                             case 3:
                                 System.out.println("Exiting Volume conversion.");
+                                System.out.println();
                                 innerLoop = false;
                                 outerLoop = false;
                                 break;
@@ -445,13 +478,11 @@ public class SwitchCase {
                     } while (innerLoop);
                 } while (outerLoop);
                 break;
+                                                                //EXIT
             case 5:
                 System.out.println("Exiting the program.");
-                System.exit(0);
-                break;
-            default:
-                System.out.println("    INVALID CHOICE!");
                 System.out.println();
+                System.exit(0);
                 break;
         }
     }

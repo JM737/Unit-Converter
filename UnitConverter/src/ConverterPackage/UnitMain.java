@@ -31,6 +31,10 @@ public class UnitMain{
             displayMenu();
             if (sc.hasNextInt()) {
                 choice = sc.nextInt();
+                if (choice < 1 || choice > 5) {
+                    System.out.println("Please enter a valid number.");
+                    System.out.println();
+                }
             } else {
                 System.out.println("Please enter a valid number.");
                 sc.next(); // Clear the invalid input
