@@ -1,7 +1,7 @@
 package ConverterPackage;
 
 public class TemperatureConvert {
-    public void secondTempCon(double temperatureNumConversion) {};
+    public void secondTempCon(double temperatureNumConversion) {}
 }
     class Celsius extends TemperatureConvert {
         public void secondTempCon(double celsiusNum2) {

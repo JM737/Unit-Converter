@@ -54,6 +54,7 @@ public class SwitchCase {
             } else {
                 System.out.println("Invalid input. Please enter a valid integer.");
                 scanner.next(); // Clear invalid input
+                System.out.println();
             }
         }
 
@@ -194,6 +195,7 @@ public class SwitchCase {
                             default:
                                 System.out.println("Invalid choice for Length conversion.");
                                 innerLoop = false; // Exit the inner loop for invalid choice
+                                break;
                         }
                     } /*INNER LOOP*/ while (innerLoop);
                 } while (outerLoop);
