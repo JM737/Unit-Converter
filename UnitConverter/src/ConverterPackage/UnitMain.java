@@ -1,47 +1,63 @@
 package ConverterPackage;
-/*TODO: 1. Create a class named UnitMain. // This class will contain the main method.
-    2. Create a scanner to read user input. (Either it is a String or a int)
-    3. Display a menu with a variety of unit conversion options. (String or a int)
-        -switch case for each conversion type
-            - using a default if the user enters an invalid option.
-                - it should prompt the user to enter a valid option. (infinitely until valid)
-        - and the user should put a number to each type of conversion.
-            - if the user enters a string, it should prompt the user to "enter a valid number". (infinitely until valid)
-    */
 
 import java.util.Scanner;
 public class UnitMain{
-    public static boolean isValid = true;
-    static SwitchCase switchChoice = new SwitchCase();
+    public static boolean outterLoop = true;
+    public static boolean innerLoop = true;
+    static SwitchCase switchCase1 = new SwitchCase();
+    static SwitchCase2 switchCase2 = new SwitchCase2();
     static Scanner sc = new Scanner (System.in);
-    static void displayMenu() {
-        System.out.print(""" 
-                    [   UNIT CONVERTER  ]
+    public static void displayChoices() {
+        System.out.println("""
+                [  CONVERTER  ]
                 Please choose a conversion type:
-                1. Length (meters <-> kilometers <-> miles)
-                2. Weight (grams <-> kilograms <-> pounds)
-                3. Temperature (Celsius <-> Fahrenheit)
-                4. Volume (liters <-> gallons)
-                5. Exit
-                Enter your choice (1-5):\s""");
+                1. Unit Converter
+                2. Currency Converter
+                3. Exit
+                Enter your choice (1-3):\s);
+                """);
     }
     public static void main(String[] args) {
         do {
-            int choice;
-            displayMenu();
+            displayChoices();
             if (sc.hasNextInt()) {
-                choice = sc.nextInt();
-                if (choice < 1 || choice > 5) {
-                    System.out.println("Please enter a valid number.");
-                    System.out.println();
+                int converterChoice = sc.nextInt();
+                switch (converterChoice) {
+                    case 1:
+                        do {
+                            int choice;
+                            SwitchCase.displayUnitCon();
+                            if (sc.hasNextInt()) {
+                                choice = sc.nextInt();
+                                if (choice < 1 || choice > 5) {
+                                    System.out.println("Please enter a valid number.");
+                                    System.out.println();
+                                }
+                            } else {
+                                System.out.println("Please enter a valid number.");
+                                sc.next(); // Clear the invalid input
+                                System.out.println();
+                                continue; // Restart the loop
+                            }
+                            switchCase1.unitConversion(choice);
+                        } while (innerLoop);
+                        break;
+                    case 2:
+                        switchCase2.currencyConversion();
+                        break;
+                    case 3:
+                        System.out.println("Exiting the program. Goodbye!");
+                        outterLoop = false;
+                        break;
+                    default:
+                        System.out.println("Please enter a valid number.");
+                        System.out.println();
                 }
             } else {
                 System.out.println("Please enter a valid number.");
                 sc.next(); // Clear the invalid input
                 System.out.println();
-                continue; // Restart the loop
             }
-            switchChoice.convertChoices(choice);
-        } while (isValid);
+        } while (outterLoop);
     }
 }

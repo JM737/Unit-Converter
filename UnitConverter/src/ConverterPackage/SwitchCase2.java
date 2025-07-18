@@ -2,10 +2,9 @@ package ConverterPackage;
 import java.util.Scanner;
 public class SwitchCase2 {
     private final Scanner scanner;
-    private final PhilippinePeso peso, dollar, euro, pound, yen, rupee, australianDollar, canadianDollar, singaporeDollar, swissFranc, chineseYuan;
+    private final PhilippinePeso dollar, euro, pound, yen, rupee, australianDollar, canadianDollar, singaporeDollar, swissFranc, chineseYuan;
     public SwitchCase2() {
         scanner = new Scanner(System.in);
-        peso = new PhilippinePeso();
         dollar = new PesoToDollar();
         euro = new PesoToEuro();
         pound = new PesoToPound();
@@ -16,6 +15,23 @@ public class SwitchCase2 {
         singaporeDollar = new PesoToSingaporeDollar();
         swissFranc = new PesoToSwissFranc();
         chineseYuan = new PesoToChineseYuan();
+    }
+    public static void displayCurrencyCon() {
+        System.out.print(""" 
+                    [   CURRENCY CONVERTER  ]
+                Please choose a conversion type:
+                1. Philippine Peso to Dollar
+                2. Philippine Peso to Euro
+                3. Philippine Peso to Pound
+                4. Philippine Peso to Yen
+                5. Philippine Peso to Rupee
+                6. Philippine Peso to Australian Dollar
+                7. Philippine Peso to Canadian Dollar
+                8. Philippine Peso to Singapore Dollar
+                9. Philippine Peso to Swiss Franc
+                10. Philippine Peso to Chinese Yuan
+                11. Exit
+                Enter your choice (1-11):\s""");
     }
     public void currencyConversion() {
         System.out.println("Welcome to the Currency Converter!");

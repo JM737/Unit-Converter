@@ -1,11 +1,4 @@
 package ConverterPackage;
-/*TODO:
-1. Create a method named switchCase in the SwitchCase class.
-2. The method should take an integer parameter named choice.
-3. Use switch for different types of conversions.
-    - Inner switch for another type of conversion
-4. Default for handling invalid input.
- */
 import java.util.Scanner;
 public class SwitchCase {
     private final Scanner scanner;
@@ -46,6 +39,17 @@ public class SwitchCase {
         liters = new Liters();
 
     }
+    public static void displayUnitCon() {
+        System.out.print(""" 
+                    [   UNIT CONVERTER  ]
+                Please choose a conversion type:
+                1. Length (meters <-> kilometers <-> miles)
+                2. Weight (grams <-> kilograms <-> pounds)
+                3. Temperature (Celsius <-> Fahrenheit)
+                4. Volume (liters <-> gallons)
+                5. Exit
+                Enter your choice (1-5):\s""");
+    }
     public int getValidInteger(String prompt) {
         while (true) {
             System.out.print(prompt);
@@ -63,7 +67,7 @@ public class SwitchCase {
             boolean outerLoop = true;
             boolean innerLoop = true;
 
-    public void convertChoices(int choice) {
+    public void unitConversion(int choice) {
         switch(choice) {
 
                                                         // LENGTH CONVERSION
@@ -88,13 +92,13 @@ public class SwitchCase {
                         lengthChoice = scanner.nextInt();
                     }else{
                         System.out.println("Invalid input. Please enter a number.");
-                        scanner.next(); // Clear the invalid input
+                        scanner.next();
                         System.out.println();
-                        continue; // Restart the outer loop
+                        continue;
                     }
 
-                    //INNER SWITCH
-                    do { // INNER LOOP
+
+                    do {
                         switch (lengthChoice) {
                             case 1:
                                 System.out.println("    METERS TO KILOMETERS");
