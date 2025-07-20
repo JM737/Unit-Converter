@@ -2,7 +2,7 @@ package ConverterPackage;
 
 import java.util.Scanner;
 public class UnitMain{
-    public static boolean outterLoop = true;
+    public static boolean outerLoop = true;
     public static boolean innerLoop = true;
     static SwitchCase switchCase1 = new SwitchCase();
     static SwitchCase2 switchCase2 = new SwitchCase2();
@@ -14,7 +14,7 @@ public class UnitMain{
                 1. Unit Converter
                 2. Currency Converter
                 3. Exit
-                Enter your choice (1-3):\s);
+                Enter your choice (1-3):\s
                 """);
     }
     public static void main(String[] args) {
@@ -43,11 +43,27 @@ public class UnitMain{
                         } while (innerLoop);
                         break;
                     case 2:
-                        switchCase2.currencyConversion();
+                        do {
+                            int choice;
+                            SwitchCase2.displayCurrencyCon();
+                            if (sc.hasNextInt()) {
+                                choice = sc.nextInt();
+                                if (choice < 1 || choice > 11) {
+                                    System.out.println("Please enter a valid number.");
+                                    System.out.println();
+                                }
+                            } else {
+                                System.out.println("Please enter a valid number.");
+                                sc.next(); // Clear the invalid input
+                                System.out.println();
+                                continue; // Restart the loop
+                            }
+                            switchCase2.currencyConversion(choice);
+                        }while (innerLoop);
                         break;
                     case 3:
                         System.out.println("Exiting the program. Goodbye!");
-                        outterLoop = false;
+                        outerLoop = false;
                         break;
                     default:
                         System.out.println("Please enter a valid number.");
@@ -58,6 +74,6 @@ public class UnitMain{
                 sc.next(); // Clear the invalid input
                 System.out.println();
             }
-        } while (outterLoop);
+        } while (outerLoop);
     }
 }

@@ -33,7 +33,7 @@ public class SwitchCase2 {
                 11. Exit
                 Enter your choice (1-11):\s""");
     }
-    public void currencyConversion() {
+    public void currencyConversion(int currencyChoice) {
         System.out.println("Welcome to the Currency Converter!");
         System.out.println("Enter the amount in Philippine Peso (PHP): ");
         double pesoAmount = scanner.nextDouble();
